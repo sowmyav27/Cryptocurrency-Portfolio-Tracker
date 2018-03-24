@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/login.css"/>
+<title>Login Form</title>
+<script src="/static/js/login.js"></script>
+<title>Cryptocurrency Portfolio Tracker</title>
+</head>
+<body>
+    <div class="teal-c">
+    <div class="pad1 heading-main teal-c">Cryptocurrency Portfolio Tracker</div>
+</div>
+<div class="div5">
+<form id="form_id" method="post" name="loginForm">
+    <div class="div4">
+        <label class="lab">User Name :</label>
+        <input type="text" placeholder = "xxxxx@xxxxx.xxx" pattern = "^.+@.+\..{2,4}$" name="username" id="username" required/>
+    </div>
+    <div class="div4">
+        <label class="lab">Password :</label>
+        <input type="password" name="password" id="password" required />
+    </div>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+</form>
+
+</div>
+</body>
+</html>
+

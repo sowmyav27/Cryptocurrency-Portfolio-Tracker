@@ -1,0 +1,27 @@
+	<div id="tabs-3">
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-panel inline" style="width:50%">
+		<div class="ripple"><img src="/static/images/ripple.png" width="50" height="50"></div>
+		<div class="ripple">Value: </div>
+		<div id="id02" class="ripple"></div>
+		<script>
+		var xmlhttp = new XMLHttpRequest();
+		var url = "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD";
+		var price3 = ""
+		xmlhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr3 = JSON.parse(this.responseText);
+		        price3 = myFunction(myArr3);
+		        document.getElementById("id02").innerHTML = price3;
+		        console.log(price3);
+		    }
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+		</script>
+		<p id="rdesc" class="w3-container">Ripple is a real-time gross settlement system (RTGS), currency exchange and remittance network created by the Ripple company.</p>
+	</div>
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="rclicked()" name="int2" value="yes" checked>Interested</div>
+ </div>
+</div>
+</div>

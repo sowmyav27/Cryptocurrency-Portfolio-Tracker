@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="/static/currencyrates.css" />
+    <link rel="stylesheet" href="/static/convert.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body class="w3-container">
+    <div id="sidebar" class="w3-container">
+            <h4 class="sidebaritem inline">Menu</h4>
+            <button class="closebtn" onclick="menuclose()">&times;</button><br /><br />
+            <a href="/home" class="sidebaritem">Home</a><br /><br />
+            <a href="/currency" class="sidebaritem"><i class="fa-dollar-sign">Currency Rate Tracker</a><br /><br />
+            <a href="/convert" class="sidebaritem">Currency Converter</a><br /><br />
+            <a href="#" class="sidebaritem">Wallet</a><br /><br />
+    </div>
+
+<div id="main">
+    <div>
+        <button id="navbar" onclick="menuopen()">&#9776; Menu</button><br /><br />
+    </div>
+    
+    <div><h1 class="head">Crypto Currency Portfolio Tracker</h1></div>
+    <div class="submain">
+        <div class="headconv" style="width:50%"><h2>Currency Converter</h2><br /></div>
+        
+                <div class="w3-panel from"><span>Convert From</span>
+                <select id="fromcurr">
+                    <option value="BTC" selected>BTC</option>
+                    <option value="ETH">ETH</option>
+                </select>
+
+
+                 <div id="slider"></div>
+                <div id ="slideOutput">0</div>
+                <script>
+                    $("#slider").slider().bind("slide",reportSlider)
+                    function reportSlider(){
+                        var sliderVal=$("#slider").slider("value");
+                        $("#slideOutput").html(sliderVal);
+                    }
+                </script>
+                <!-- <input id="num" type="text" name="curr"> --></div>
+                
+
+                <div class="w3-panel from"><span>Convert To</span>
+                <select id="tocurr">
+                    <option value="USD" selected>USD</option>
+                    <option value="EUR">EUR</option>
+                </select></div>
+
+                <input id="btn" class="w3-panel convert" type="submit" value="Convert" onclick="formsubmit()">
+                <div><p>
+                    <h1 class="w3-panel currrate" id="demo">Currency Rate is</h1>
+                </p></div> 
+    </div>
+    <script>
+
+    function formsubmit() {
+        var out = "";
+        var price = "";
+        var url = "";
+        var urls = ["https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR", "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR"];
+        
+        var x = document.getElementById("fromcurr");
+        var frm = x.options[x.selectedIndex].value;
+        console.log(frm);
+        var y = document.getElementById("tocurr");
+        var to = y.options[y.selectedIndex].value;
+        console.log(to);
+        var count = $("#slider").slider("value")-1;
+        console.log(count);
+
+        switch(frm){
+            case "BTC":
+                url = urls[0];
+                break;
+            case "ETH":
+                url = urls[1];
+                break;
+            default:
+            console.log("invalid to currency");
+        }
+
+        console.log(url);
+
+        var xmlarr = new XMLHttpRequest();
+        xmlarr.onreadystatechange = function() {
+            if((this.readyState == 4) && (this.status == 200)) {
+                out = JSON.parse(this.responseText);
+                price = myFunction(out,count,to);
+                console.log(price);
+                price = "Converted rate is " + price + " for " + count + " " + frm + "(s)";
+                document.getElementById("demo").innerHTML = price;
+            }
+        }
+        xmlarr.open("GET", url, true);
+        xmlarr.send();
+    }
+
+    function menuopen() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("sidebar").style.width = "20%";
+          document.getElementById("sidebar").style.display = "block";
+          document.getElementById("navbar").style.display = "none";
+        }
+
+    function menuclose() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("sidebar").style.display = "none";
+          document.getElementById("navbar").style.display = "block";
+        }
+
+    function myFunction(out,count,to) {
+        var total = "";
+        var symbol = "";
+        switch(to){
+            case "USD":
+                total = out.USD;
+                symbol = "$";
+                break;
+            case "EUR":
+                total = out.EUR;
+                symbol = "€";
+                break;
+            default:
+                console.log("invalid to currency");
+        }
+        
+        total = total * count;
+        total = symbol + total;
+        return total;
+    }
+    </script>
+</body>
+</html>

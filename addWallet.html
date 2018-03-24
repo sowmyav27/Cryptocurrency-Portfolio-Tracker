@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Add to Wallet</title>
+	<link rel="stylesheet" href="/static/currencyrates.css" />
+	<link rel="stylesheet" href="/static/addwallet.css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<meta charset= "UTF-8" />
+    <script type="text/javascript"
+            src="js/jquery.js">
+    </script>
+    <script type="text/javascript"
+            src="js/jquery-ui-lightness/jquery-ui.min.js">
+    </script>
+    <script type="text/javascript" 
+            src="/static/js/drag.js">
+    </script>
+
+</head>
+
+<body class="w3-container">
+	<div id="sidebar" class="w3-container">
+			<h4 class="sidebaritem inline">Menu</h4>
+			<button class="closebtn" onclick="menuclose()">&times;</button><br /><br />
+			<a href="/home" class="sidebaritem">Home</a><br /><br />
+			<a href="/currency" class="sidebaritem"><i class="fa-dollar-sign">Currency Rate Tracker</a><br /><br />
+			<a href="/convert" class="sidebaritem">Currency Converter</a><br /><br />
+			<a href="#" class="sidebaritem">Wallet</a><br /><br />
+	</div>
+
+<div id="main">
+	<div>
+		<button id="navbar" onclick="menuopen()">&#9776; Menu</button><br /><br />
+	</div>
+	<h1 class="head">Crypto Currency Portfolio Tracker</h1>
+	
+	<div class="wallet">
+		<h4>My Wallet</h4>
+		<div class="wallet2" type="text" placeholder="Drop here">
+			
+		</div>
+	</div>
+	</div>
+	<div class="icons">
+		<h4>Add to your Wallet by dragging the currencies and dropping</h4>
+	</div>
+	<div class="icons2">
+		<div class="icons1" id="icons1">
+			<img src="/static/images/bitcoin1.png" width="150" height="80"/>
+		</div>
+		<div class="icons1" id="icons2">
+		<img src="/static/images/ethereum1.png" width="150" height="80"/>
+		</div>
+		<div class="icons1" id="icons3">
+			<img src="/static/images/ripple1.png" width="150" height="95" />
+		</div>
+	</div>
+</div>
+
+
+
+</body>

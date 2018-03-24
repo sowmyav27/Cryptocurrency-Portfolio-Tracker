@@ -1,0 +1,28 @@
+	<div id="tabs-2">
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-container inline" style="width:50%">
+		<div class="ethereum"><img src="/static/images/ethereum.png" width="50" height="50"></div>
+		<div class="ethereum">Value: </div>
+		<div id="id01" class="ethereum"></div>
+		<script>
+		var xmlhttp1 = new XMLHttpRequest();
+		var url1 = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR";
+		var price1 = ""
+		xmlhttp1.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr2 = JSON.parse(this.responseText);
+		        price1 = myFunction(myArr2);
+		        document.getElementById("id01").innerHTML = price1;
+		        console.log(price1);
+		    }
+		};
+		xmlhttp1.open("GET", url1, true);
+		xmlhttp1.send();
+
+		</script>
+		<p id="edesc" class="w3-container">Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto consensus via transaction based state transitions.</p>
+	</div>
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="eclicked()" name="int1" value="yes" checked>Interested</div>
+ </div>
+</div>
+

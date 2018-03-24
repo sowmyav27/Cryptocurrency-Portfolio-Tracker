@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Crypto Currency Rates</title>
+	<link rel="stylesheet" href="/static/currencyrates.css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="w3-container">
+	<div id="sidebar" class="w3-container">
+			<h4 class="sidebaritem inline">Menu</h4>
+			<button class="closebtn" onclick="menuclose()">&times;</button><br /><br />
+			<a href="/home" class="sidebaritem">Home</a><br /><br />
+			<a href="/currency" class="sidebaritem"><i class="fa-dollar-sign">Currency Rate Tracker</a><br /><br />
+			<a href="/convert" class="sidebaritem">Currency Converter</a><br /><br />
+			<a href="#" class="sidebaritem">Wallet</a><br /><br />
+	</div>
+
+<div id="main">
+	<div>
+		<button id="navbar" onclick="menuopen()">&#9776; Menu</button><br /><br />
+	</div>
+	<div><h1 class="head">Crypto Currency Portfolio Tracker</h1></div>
+	<div><h2>Latest Crypto Currency Rates</h2><br /></div>
+
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-container inline" style="width:50%">
+		<div class="bitcoin"><img src="/static/images/bitcoin.jpg" width="50" height="50"></div>
+		<div class="bitcoin">Bitcoin: </div>
+		<div id="id00" class="bitcoin"></div><br />
+		<script>
+		var xmlhttp0 = new XMLHttpRequest();
+		var url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR";
+		var price0=""
+		xmlhttp0.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr1 = JSON.parse(this.responseText);
+		        price0 = myFunction(myArr1);
+		        document.getElementById("id00").innerHTML = price0;
+		        console.log(price0);
+		}
+		};
+		xmlhttp0.open("GET", url, true);
+		xmlhttp0.send();
+		</script>
+		<p id="desc" class="w3-container">Bitcoin is a decentralized digital currency that enables instant payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate with no central authority: transaction management and money issuance are carried out collectively by the network.</p>
+	</div>
+		
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="clicked()" name="int0" value="yes" checked>Interested</div>
+ </div>
+
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-container inline" style="width:50%">
+		<div class="ethereum"><img src="/static/images/ethereum.png" width="50" height="50"></div>
+		<div class="ethereum">Ethereum: </div>
+		<div id="id01" class="ethereum"></div>
+		<script>
+		var xmlhttp1 = new XMLHttpRequest();
+		var url1 = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR";
+		var price1 = ""
+		xmlhttp1.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr2 = JSON.parse(this.responseText);
+		        price1 = myFunction(myArr2);
+		        document.getElementById("id01").innerHTML = price1;
+		        console.log(price1);
+		    }
+		};
+		xmlhttp1.open("GET", url1, true);
+		xmlhttp1.send();
+
+		</script>
+		<p id="edesc" class="w3-container">Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto consensus via transaction based state transitions.</p>
+	</div>
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="eclicked()" name="int1" value="yes" checked>Interested</div>
+ </div>
+
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-panel inline" style="width:50%">
+		<div class="ripple"><img src="/static/images/ripple.png" width="50" height="50"></div>
+		<div class="ripple">Ripple: </div>
+		<div id="id02" class="ripple"></div>
+		<script>
+		var xmlhttp = new XMLHttpRequest();
+		var url = "https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD";
+		var price3 = ""
+		xmlhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr3 = JSON.parse(this.responseText);
+		        price3 = myFunction(myArr3);
+		        document.getElementById("id02").innerHTML = price3;
+		        console.log(price3);
+		    }
+		};
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+		</script>
+		<p id="rdesc" class="w3-container">Ripple is a real-time gross settlement system (RTGS), currency exchange and remittance network created by the Ripple company.</p>
+	</div>
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="rclicked()" name="int2" value="yes" checked>Interested</div>
+ </div>
+</div>
+	<script>
+
+	function myFunction(arr) {
+		    var out = "";
+		    var i;
+		    out = arr.USD;
+		    out = "$" + out;
+		    return out;
+		}
+
+	function clicked() {
+        var x = document.getElementById("desc");
+    	if (x.style.display === "none") {
+        	x.style.display = "block";
+    	} else {
+        	x.style.display = "none";
+    	}
+	}
+
+	function eclicked() {
+		var y = document.getElementById("edesc");
+		if (y.style.display === "none") {
+        	y.style.display = "block";
+    	} else {
+        	y.style.display = "none";
+    	}
+	}
+
+	function rclicked() {
+		var z = document.getElementById("rdesc");
+    	if (z.style.display === "none") {
+        	z.style.display = "block";
+    	} else {
+        	z.style.display = "none";
+    	}
+	}	
+
+	function menuopen() {
+		  document.getElementById("main").style.marginLeft = "25%";
+		  document.getElementById("sidebar").style.width = "20%";
+		  document.getElementById("sidebar").style.display = "block";
+		  document.getElementById("navbar").style.display = "none";
+		}
+
+	function menuclose() {
+		  document.getElementById("main").style.marginLeft = "0%";
+		  document.getElementById("sidebar").style.display = "none";
+		  document.getElementById("navbar").style.display = "block";
+		}
+	</script>
+</body>

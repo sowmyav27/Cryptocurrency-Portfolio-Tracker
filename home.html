@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cryptocurrency Portfolio Tracker</title>
+</head>
+<body class="body_style">
+
+<div class="sidenav" id="mySidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeBar()">&times;</a>
+  <p>Menu</p>
+  <a href="currency"><i class="fa fa-line-chart"></i> Currency Rates</a>
+  <a href="convert"><i class="fa fa-arrows-h"></i> Converter</a>
+  <a href="#" ><i class="fa fa-money"></i> Add to Wallet</a>
+  <a href="#" ><i class="fa fa-money"></i> My Wallet</a>
+</div>
+ 
+<div class="teal-c">
+    <button class="pad1 teal-c menu-button" onclick="openBar()">☰ Menu</button>
+    <div class="pad1 heading-main teal-c">Cryptocurrency Portfolio Tracker</div>
+</div>
+
+<div class="w3-panel">
+<div class="w3-container w3-card-2 about center div3" style="width:70%">About</div>
+<div class="w3-container w3-card-2 about div3" style="width:70%">Crypto currency portfolio tracker enables you to track various crypto currencies in the market and provide real-time visualization of rates of the currencies on the go. It also provides a personalized dashboard according to the customization requested by the user.
+ </div>
+</div>
+
+<div class="div2">
+    <div class="div1"><a href="currency">Currency rates</a></div>
+    <div class="div1"><a href="convert">Converter</a></div>
+    <div class="div1"><a href="addtowallet">Add to Wallet</a></div>
+    <div class="div1"><a href="mywallet">My Wallet</a></div>
+    <!--<div class="div1"><a href="compareCurrency">Compare Currencies</a></div>-->
+ </div>       
+
+<script>
+function openBar() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeBar() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
