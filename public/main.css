@@ -1,0 +1,146 @@
+.head {
+    border: 2px solid black;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #30273a;
+    text-align: center;
+    color: white;
+}
+
+.body_style
+{
+    font-family: Verdana
+}    
+.side
+{
+    height:100%;
+    width:100px;
+    background-color:#fff;
+    position:fixed!important;
+    z-index:1;
+    overflow:auto
+    
+}
+.side-grey
+{
+    color:white!important;
+    background-color:#f1f1f1!important
+}
+.side-block
+{
+    width:15%;
+    text-align:left;
+    padding:8px 16px
+}
+.pad1
+{
+    padding-bottom: 0px;
+}
+.div1
+{
+    width: 250px;
+    padding: 25px;
+    margin:0 auto;
+    text-align: center;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    border-style: inset;
+    background-color: #959b9a
+    
+}
+.div2
+{
+    padding: 25px
+}
+.div3
+{
+    margin:0 auto;
+    text-align: center
+}
+a:hover
+{
+    color: black;
+}
+.teal-c
+{
+    color:white!important;
+    background-color:#30273a!important
+}
+.heading-main
+{
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    color:white!important;
+    padding-bottom: 15px
+
+}
+.menu-button
+{
+    font-size: 30px
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #30273a;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-style: inset
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav p {
+    padding: 2px 2px 2px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+    font-weight: 500px;
+}
+
+.sidenav a:hover {
+    color: #000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.about {
+    margin-left: 300px;
+    color: black;
+    font-style: italic;
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+.center {
+    background-color: #30273a;
+    color: white;
+    text-align: center;
+}
+
+.image {
+    width: 70%;
+    height: 50%;
+    margin-left: 300px;
+}

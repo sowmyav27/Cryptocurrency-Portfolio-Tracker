@@ -1,0 +1,29 @@
+body{
+	font-style: normal;
+}	
+li{
+	display:inline-block;
+	padding: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+	
+	font-style: normal
+}
+#selectable .ui-selected {
+    background-color:teal!important;
+    color: white;
+}
+#selectable .ui-selecting {
+    background-color: gray;
+}
+.head1 {
+	border: 2px solid black;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: teal!important;
+	font-style: normal;
+	font-size: 150%;
+	font-weight: 700
+}

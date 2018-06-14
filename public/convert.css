@@ -1,0 +1,40 @@
+.from {
+	margin-left: 400px;
+	font-size: 20px;
+	color: black;
+}
+
+.convert {
+	margin-left: 600px;
+	border: 2px solid black;
+	font-size: 20px;
+	background-color: teal;
+	color: white;
+	cursor: pointer;
+}
+.currrate {
+	margin-left: 400px;
+	font-size: 20px;
+	color: black
+}
+
+.headconv {
+	background-color: lightgrey;
+	margin-left: 400px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.submain {
+	border: 2px solid black;
+}
+#slider {
+    height: 15px;
+    width: 300px;
+}
+#btn{
+	margin-left: 500px;
+}
+.headconv{
+	margin-left: 300px;
+}

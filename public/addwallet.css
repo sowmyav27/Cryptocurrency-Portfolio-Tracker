@@ -1,0 +1,46 @@
+.body_style
+{
+    font-family: Verdana
+}    
+.wallet
+{
+    float: left;
+    width: 40%;
+    border-style: inset;
+    text-align: center
+    
+}
+.wallet2
+{
+   height: 400px;
+     width: 100%;
+    float: left;
+    border-style: inset
+    
+}
+.icons
+{
+    float: right;
+     width: 60%;
+    border-style: inset;
+    text-align: center
+    
+}
+.icons1
+{
+    height: 100px;
+    float: right;
+    border-style: outset
+}
+.icons2
+{
+    height: 400px;
+    width: 60%;
+    float: right;
+    border-style: inset;
+    margin: 0 auto
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}

@@ -1,0 +1,27 @@
+ 	<div id="tabs-1">
+ <div class="w3-panel">
+	<div class="w3-card-2 w3-container inline" style="width:50%">
+		<div class="bitcoin"><img src="/static/images/bitcoin.jpg" width="50" height="50"></div>
+		<div class="bitcoin">Value: </div>
+		<div id="id00" class="bitcoin"></div><br />
+		<script>
+		var xmlhttp0 = new XMLHttpRequest();
+		var url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR";
+		var price0=""
+		xmlhttp0.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		        var myArr1 = JSON.parse(this.responseText);
+		        price0 = myFunction(myArr1);
+		        document.getElementById("id00").innerHTML = price0;
+		        console.log(price0);
+		}
+		};
+		xmlhttp0.open("GET", url, true);
+		xmlhttp0.send();
+		</script>
+		<p id="desc" class="w3-container">Bitcoin is a decentralized digital currency that enables instant payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate with no central authority: transaction management and money issuance are carried out collectively by the network.</p>
+	</div>
+		
+	<div class="inline" style="font-size: 20px"><input type="checkbox" onclick="clicked()" name="int0" value="yes" checked>Interested</div>
+ </div>
+</div>
