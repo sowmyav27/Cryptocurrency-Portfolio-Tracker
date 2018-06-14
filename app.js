@@ -8,13 +8,18 @@ var app = express();
 
 //View engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
+
+
+app.use(session( {secret: "String for encrypting cookies.",
+	cookie: {secure : false},
+duration: 30 * 60 * 1000,
+ } ));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use('/static', express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session( {secret: "String for encrypting cookies." } ));
 
 app.use('/', index);
 

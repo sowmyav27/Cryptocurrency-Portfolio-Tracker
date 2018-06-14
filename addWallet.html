@@ -1,69 +1,424 @@
+  <!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html>
-<html lang="en-us">
 <head>
-	<meta charset="UTF-8">
-	<title>Add to Wallet</title>
-	<link rel="stylesheet" href="/static/currencyrates.css" />
-	<link rel="stylesheet" href="/static/addwallet.css" />
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<meta charset= "UTF-8" />
-    <script type="text/javascript"
-            src="js/jquery.js">
-    </script>
-    <script type="text/javascript"
-            src="js/jquery-ui-lightness/jquery-ui.min.js">
-    </script>
-    <script type="text/javascript" 
-            src="/static/js/drag.js">
-    </script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+    <link rel="icon" href="../assets/img/favicon.png">
+    <title>
+        Cyryptocurrency Portfolio Tracker
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../static/material-dashboard.css?v=2.0.0">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- iframe removal -->
+<style>
+.div1{
+        height: 10px;
+    width: 50%;
+    
+    }
+    .div2{
+    background-color: #538cc6;    
+    }
+    .div3{
+        background-color: #ff8c1a
+    }
+    .div4{
+        background-color: #6358a7
+    }
+    .div5{
+        background-color: #6D7275
+    }
+    .div6{
+        background-color: #1B998B
+    }
+    .div7{
+        background-color: #C5D86D
+    }
+    #title1{
+        font-weight: 900;
+        font-size: 1.9em;
+    }
+    #coin{
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    #qty{
+        color: black;
+        /*padding: 20px;*/
+        /*width: 60%;*/
+    border: 3px ;
+    /*padding-left: 100px;*/
+    margin-left: 105px;
+    margin-top: 30px;
+    font-weight: 700;
+        font-size: 1.5em;
 
+    }
+    #btcqty{
+        color: black;
+        /*padding: 20px;*/
+        /*width: 60%;*/
+    border: 3px ;
+    /*padding-left: 100px;*/
+    margin-left: 105px;
+    margin-top: 30px;
+    font-weight: 700;
+        font-size: 1.5em;
+
+    }
+    #bitcoin{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    #ripple{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    #eth{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    #lite{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    #stellar{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    #car{
+        padding: 5px;
+        margin-top: 30px;
+        margin-left: 90px;
+    }
+    </style>
 </head>
 
-<body class="w3-container">
-	<div id="sidebar" class="w3-container">
-			<h4 class="sidebaritem inline">Menu</h4>
-			<button class="closebtn" onclick="menuclose()">&times;</button><br /><br />
-			<a href="/home" class="sidebaritem">Home</a><br /><br />
-			<a href="/currency" class="sidebaritem"><i class="fa-dollar-sign">Currency Rate Tracker</a><br /><br />
-			<a href="/convert" class="sidebaritem">Currency Converter</a><br /><br />
-			<a href="#" class="sidebaritem">Wallet</a><br /><br />
-	</div>
+<body class="">
+    
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-<div id="main">
-	<div>
-		<button id="navbar" onclick="menuopen()">&#9776; Menu</button><br /><br />
-	</div>
-	<h1 class="head">Crypto Currency Portfolio Tracker</h1>
-	
-	<div class="wallet">
-		<h4>My Wallet</h4>
-		<div class="wallet2" type="text" placeholder="Drop here">
-			
-		</div>
-	</div>
-	</div>
-	<div class="icons">
-		<h4>Add to your Wallet by dragging the currencies and dropping</h4>
-	</div>
-	<div class="icons2">
-		<div class="icons1" id="icons1">
-			<img src="/static/images/bitcoin1.png" width="150" height="80"/>
-		</div>
-		<div class="icons1" id="icons2">
-		<img src="/static/images/ethereum1.png" width="150" height="80"/>
-		</div>
-		<div class="icons1" id="icons3">
-			<img src="/static/images/ripple1.png" width="150" height="95" />
-		</div>
-	</div>
-</div>
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-normal">
+                    Menu
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/home">
+                            <i class="material-icons">dashboard</i>
+                            <p>DashBoard</p>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addtowallet">
+                            <i class="fa fa-credit-card"></i>
+                            <p>Add to Wallet</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/mywallet">
+                            <i class="fa fa-credit-card"></i>
+                            <p>My Wallet</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/history">
+                            <i class="fa fa-history"></i>
+                            <p>My History</p>
+                        </a>
+                    </li>
+            
+                    
+                </ul>
+            </div>
+        </div>
+       <div class="main-panel">
+	 <!-- Start Navbar -->
+	 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+                <div class="container-fluid">
+                  
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav">
+                           <li class="nav-item">	
+								<a class="item" href="/about">About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">person</i>
+                                   
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/viewinfo">My Profile</a>
+                                    <a class="dropdown-item" href="/updateuser">Update Profile</a>
+									<a class ="dropdown-item" href="/">Logout</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+	 
+	 
+                    
+                        
 
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    
+                    <div class="row">
+                        <div class="col-md-4">
 
+                            <form action="addwallet" method="post" id="bitcoinadd">
+                            <div class="card card-chart">
+                                <div class="div2">
+                                    <label id="btcqty">Enter quantity</label>
+                                        <input type="text" name="bitcoin" id="bitcoin" class="div2">
+                                     </input>
+                                    <div class="div1">
+                                        
+                                    </div>
 
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Bitcoin</h4>
+                                    <p class="card-category" id = "bitcoinPrice">
+                                        <span class="text-success" ></span> Price: $9410.48 <button type="submit" style="float: right;" onload = "myFuncLoad()" onclick="myFunc()">Add to wallet</button></p>
+
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> updated 4 minutes ago -->
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <form action="addwalletRipple" method="post" id="bitcoinadd">
+                                <div class="div3">
+
+                                    <label id="qty">Enter quantity</label>
+                                        <input type="number" name="ripple" id="ripple" class="div3">
+                                     </input>
+                                    <div class="div1"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Ripple</h4>
+                                    <p class="card-category">Price: $0.84331<button type="submit" onclick="myFunc()" style="float: right;" >Add to wallet</button></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> campaign sent 2 days ago -->
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <form action="addwalletEth" method="post" id="bitcoinadd">
+                                <div class="div4">
+                                    <label id="qty">Enter quantity</label>
+                                        <input type="number" name="eth" id="eth" class="div4">
+                                     </input>
+                                    <div class="div1"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Ethereum</h4>
+                                    <p class="card-category">Price: $769.61 <button type="submit" onclick="myFunc()" style="float: right;" >Add to wallet</button></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> campaign sent 2 days ago -->
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <form action="addwalletLite" method="post" id="bitcoinadd">
+                                <div class="div5">
+                                    <label id="qty">Enter quantity</label>
+                                        <input type="number" name="lite" id="lite" class="div5">
+                                     </input>
+                                    <div class="div1"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Lite Coin</h4>
+                                    <p class="card-category">Price: $167.46<button type="submit" onclick="myFunc()" style="float: right;" >Add to wallet</button></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> updated 4 minutes ago -->
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <form action="addwalletSte" method="post" id="bitcoinadd">
+                                <div class="div6">
+                                    <label id="qty">Enter quantity</label>
+                                        <input type="number" name="stellar" id="stellar" class="div6">
+                                     </input>
+                                    <div class="div1"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Stellar</h4>
+                                    <p class="card-category">Price: $0.41015<button type="submit" onclick="myFunc()" style="float: right;" >Add to wallet</button></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> campaign sent 2 days ago -->
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <form action="addwalletCard" method="post" id="bitcoinadd">
+                                <div class="div7">
+                                    <label id="qty">Enter quantity</label>
+                                        <input type="number" name="car" id="car" class="div7">
+                                     </input>
+                                    <div class="div1"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title" id="coin">Cardano</h4>
+                                    <p class="card-category">Price: $0.3444<button type="submit" onclick="myFunc()" style="float: right;" >Add to wallet</button></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <!-- <i class="material-icons">access_time</i> campaign sent 2 days ago -->
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+        </div>
+    </div>
+	</div>
+</form>
 </body>
+<script src="/static/js/core/jquery.min.js"></script>
+<script src="/static/js/core/popper.min.js"></script>
+<script src="/static/js/bootstrap-material-design.js"></script>
+<script src="/static/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+<script src="/static/js/plugins/chartist.min.js"></script>
+<script src="/static/js/plugins/arrive.min.js" type="text/javascript"></script>
+
+<script src="/static/js/plugins/bootstrap-notify.js"></script>
+
+<script src="/static/js/material-dashboard.js?v=2.0.0"></script>
+
+<script src="/static/js/plugins/demo.js"></script>
+<script>function myFunc(){
+    alert("Successfully added to wallet !");
+}
+function myFuncLoad(){
+    console.log("Sowmya");
+    url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD";
+    var xmlarr = new XMLHttpRequest();
+        xmlarr.onreadystatechange = function() {
+            if((this.readyState == 4) && (this.status == 200)) {
+                out = JSON.parse(this.responseText);
+                price = myFunction(out,count,to);
+                // console.log(price);
+                // price = "Converted rate is " + price + " for " + count + " " + frm + "(s)";
+                document.getElementById("bitcoinPrice").innerHTML = price;
+            }
+        }
+        xmlarr.open("GET", url, true);
+        xmlarr.send();
+}
+function myFunction(out,count,to) {
+        var total = "";
+        var symbol = "";
+        switch(to){
+            case "USD":
+                total = out.USD;
+                symbol = "$";
+                break;
+            case "EUR":
+                total = out.EUR;
+                symbol = "€";
+                break;
+            default:
+                console.log("invalid to currency");
+        }
+        
+        // total = total * count;
+        // total = symbol + total;
+        return total;
+    }
+</script>
+<!--
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+</html>

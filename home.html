@@ -1,42 +1,379 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/main.css">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+   
+    <link rel="stylesheet" href="../static/currencyrates.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Cryptocurrency Portfolio Tracker</title>
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <title>
+        Crypto Currency Portfolio Tracker
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/material-dashboard.css?v=2.0.0">
+    <link rel="stylesheet" href="/static/js/jquery-ui-eggplant/jquery-ui.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/static/js/jquery-ui-eggplant/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> -->
+
+    <script type="text/javascript">
+        var viz;
+        var viz1;
+        var viz2;
+        var viz3;
+        var viz4;
+        var viz5;
+        
+
+
+        function initViz() {
+        
+        var containerDiv = document.getElementById("bitcoin"),
+                url = "https://public.tableau.com/views/BTC_9/Dashboard1?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+        viz = new tableau.Viz(containerDiv, url, options); 
+
+        var containerDiv1 = document.getElementById("cardano"),
+                url = "https://public.tableau.com/views/ethereum_daily/Dashboard2?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+
+        viz1 = new tableau.Viz(containerDiv1, url, options); 
+
+        var containerDiv2 = document.getElementById("ethereum"),
+                url = "https://public.tableau.com/views/ethereum_daily/Dashboard3?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+
+        viz2 = new tableau.Viz(containerDiv2, url, options); 
+
+        var containerDiv3 = document.getElementById("ripple"),
+                url = "https://public.tableau.com/views/ripple_daily/Dashboard4?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+        viz3 = new tableau.Viz(containerDiv3, url, options); 
+
+
+        var containerDiv3 = document.getElementById("stellar"),
+                url = "https://public.tableau.com/views/stellar_daily/Dashboard5?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+        viz4 = new tableau.Viz(containerDiv3, url, options); 
+
+        var containerDiv4 = document.getElementById("litecoin"),
+                url = "https://public.tableau.com/views/Litecoin_daily/Dashboard6?:embed=y&:display_count=yes&publish=yes",
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+        viz5 = new tableau.Viz(containerDiv4, url, options); 
+            // Create a viz object and embed it in the container div.
+        }
+
+        function showgraph() {
+            viz.dispose();
+            viz1.dispose();
+            viz2.dispose();
+            viz3.dispose();
+            viz4.dispose();
+            viz5.dispose();
+            var mon_urls = ["https://public.tableau.com/views/Bitcoin_Monthly/Dashboard7?:embed=y&:display_count=yes&publish=yes", 
+            "https://public.tableau.com/views/Cardano_Monthly/Dashboard8?:embed=y&:display_count=yes&publish=yes", 
+            "https://public.tableau.com/views/Ethereum_Monthly/Dashboard9?:embed=y&:display_count=yes&publish=yes",
+            "https://public.tableau.com/views/Ripple_Monthly/Dashboard10?:embed=y&:display_count=yes&publish=yes",
+            "https://public.tableau.com/views/Stellar_Monthly/Dashboard11?:embed=y&:display_count=yes&publish=yes",
+            "https://public.tableau.com/views/Litecoin_Monthly/Dashboard12?:embed=y&:display_count=yes&publish=yes"];
+            // var html_ids = ["bitcoin", "cardano", "ethereum","ripple"];
+             // "stellar", "litecoin"];
+
+            // var x = document.getElementById("currency");
+            // var frm = x.options[x.selectedIndex].value;
+            // console.log(frm);
+            var y = document.getElementById("period");
+            var to = y.options[y.selectedIndex].value;
+            console.log(to);
+            var URL;
+            
+            if(to == "Monthly")
+            {
+                var containerDiv = document.getElementById("bitcoin"),
+                url = mon_urls[0],
+                options = {
+                    hideTabs: true,    
+                    hideToolbar: false,   
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+                viz = new tableau.Viz(containerDiv, url, options); 
+
+                var containerDiv1 = document.getElementById("cardano"),
+                        url = mon_urls[1],
+                        options = {
+                            hideTabs: true,    
+                            hideToolbar: false,   
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
+
+                viz1 = new tableau.Viz(containerDiv1, url, options); 
+
+                var containerDiv2 = document.getElementById("ethereum"),
+                        url = mon_urls[2],
+                        options = {
+                            hideTabs: true,    
+                            hideToolbar: false,   
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
+
+                viz2 = new tableau.Viz(containerDiv2, url, options); 
+
+                var containerDiv3 = document.getElementById("ripple"),
+                        url = mon_urls[3],
+                        options = {
+                            hideTabs: true,    
+                            hideToolbar: false,   
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
+                viz3 = new tableau.Viz(containerDiv3, url, options); 
+
+
+                var containerDiv3 = document.getElementById("stellar"),
+                        url = mon_urls[4],
+                        options = {
+                            hideTabs: true,    
+                            hideToolbar: false,   
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
+                viz4 = new tableau.Viz(containerDiv3, url, options); 
+
+                var containerDiv4 = document.getElementById("litecoin"),
+                        url = mon_urls[5],
+                        options = {
+                            hideTabs: true,    
+                            hideToolbar: false,   
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
+                viz5 = new tableau.Viz(containerDiv4, url, options); 
+            }
+        }
+    </script>
+
+    <script>
+        $( function() {
+        $( "#currency" ).selectmenu();
+        $( "#period" ).selectmenu();
+        $( "#btn" ).button();
+        } );
+    </script>
+}
 </head>
-<body class="body_style">
 
-<div class="sidenav" id="mySidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeBar()">&times;</a>
-  <p>Menu</p>
-  <a href="currency"><i class="fa fa-line-chart"></i> Currency Rates</a>
-  <a href="convert"><i class="fa fa-arrows-h"></i> Converter</a>
-  <a href="#" ><i class="fa fa-money"></i> Add to Wallet</a>
-  <a href="#" ><i class="fa fa-money"></i> My Wallet</a>
-</div>
- 
-<div class="teal-c">
-    <button class="pad1 teal-c menu-button" onclick="openBar()">☰ Menu</button>
-    <div class="pad1 heading-main teal-c">Cryptocurrency Portfolio Tracker</div>
-</div>
+<body class="" onload="initViz();">
+<div class="wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+      
+          <div class="logo">
+                <a href="#" class="simple-text logo-normal">
+                    Menu
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active ">
+                        <a class="nav-link" href="/home">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/addwallet">
+                            <i class="fa fa-credit-card"></i>
+                            <p>Add to Wallet</p>
+                        </a>
+                    </li>	
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/myWallet">
+                            <i class="fa fa-credit-card"></i>
+                            <p>My Wallet</p>
+                        </a>
+                    </li>
+					<li class="nav-item ">
+                        <a class="nav-link" href="/history">
+                            <i class="fa fa-history"></i>
+                            <p>My History</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+		
+	<div class="main-panel">
+	 <!-- Start Navbar -->
+	 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+                <div class="container-fluid">
+                  
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav">
+                           <li class="nav-item">	
+								<a class="item" href="/about">About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">person</i>
+                                   
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/viewinfo">My Profile</a>
+                                    <a class="dropdown-item" href="/updateuser">Update Profile</a>
+									<a class ="dropdown-item" href="/">Logout</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-<div class="w3-panel">
-<div class="w3-container w3-card-2 about center div3" style="width:70%">About</div>
-<div class="w3-container w3-card-2 about div3" style="width:70%">Crypto currency portfolio tracker enables you to track various crypto currencies in the market and provide real-time visualization of rates of the currencies on the go. It also provides a personalized dashboard according to the customization requested by the user.
- </div>
-</div>
+<div id="main" class="container">
+                <div class="container-fluid">
+                    <h3>Crypto Currency Portfolio Tracker</h3>
+                    <hr>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-info">
+                                    <div class="ct-chart">Bitcoin Price Trends</div>
+                                </div>
+                                <div class="card-body" id="bitcoin"></div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-4 offset-md-2">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-success">
+                                    <div class="ct-chart">Ethereum Price Trends</div>
+                                </div>
+                                <div class="card-body" id="ethereum"></div>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="div2">
-    <div class="div1"><a href="currency">Currency rates</a></div>
-    <div class="div1"><a href="convert">Converter</a></div>
-    <div class="div1"><a href="addtowallet">Add to Wallet</a></div>
-    <div class="div1"><a href="mywallet">My Wallet</a></div>
-    <!--<div class="div1"><a href="compareCurrency">Compare Currencies</a></div>-->
- </div>       
+                    <div class="row">
 
+                        <div class="col-md-4">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-danger">
+                                    <div class="ct-chart">Ripple Price Trends</div>
+                                </div>
+                                <div class="card-body" id="ripple"></div>
+                            </div>
+                        </div>
+                    
+
+                        <div class="col-md-4 offset-md-2">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-warning">
+                                    <div class="ct-chart">Litecoin Price Trends</div>
+                                </div>
+                                <div class="card-body" id="litecoin"></div>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-primary">
+                                    <div class="ct-chart">Stellar Price Trends</div>
+                                </div>
+                                <div class="card-body" id="stellar"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 offset-md-2">
+                            <div class="card card-chart" style="width:420px; height:360px;">
+                                <div class="card-header card-header-success">
+                                    <div class="ct-chart">Cardano Price Trends</div>
+                                </div>
+                                <div class="card-body" id="cardano"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="w3-panel currency ">
+                            <fieldset>
+                                <label>Select Periodicity</label>
+                                <select class="w3-panel" name="curr" id="period">
+                                    <option selected="selected">Daily</option>
+                                    <option>Monthly</option>
+                                    <option>Yearly</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="w3-panel">
+                            <input id="btn btn-primary" value="View" type="submit" onclick="showgraph()">
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+		</div>
+</body>
 <script>
 function openBar() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -47,4 +384,31 @@ function closeBar() {
 }
 </script>
 </body>
+<script src="/static/js/core/jquery.min.js"></script>
+<script src="/static/js/core/popper.min.js"></script>
+<script src="/static/js/bootstrap-material-design.js"></script>
+<script src="/static/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
+<script src="/static/js/plugins/chartist.min.js"></script>
+<script src="/static/js/plugins/arrive.min.js" type="text/javascript"></script>
+
+<script src="/static/js/plugins/bootstrap-notify.js"></script>
+
+<script src="/static/js/material-dashboard.js?v=2.0.0"></script>
+
+<script src="/static/js/plugins/demo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //init wizard
+
+        // demo.initMaterialWizard();
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+        demo.initCharts();
+
+    });
+</script>
 </html>

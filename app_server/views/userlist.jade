@@ -1,0 +1,13 @@
+block content
+  head
+    link(href='/static/main.css', rel='stylesheet')
+  h3.
+    User List
+
+  ul
+    each u in userlist
+      ul(class="currencylist")
+        #{u.password} #{u.username}
+
+  h3.
+    #[a(target="_blank", href="/home") Go back to Home]
